@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio SAÉ 1.04 – Elfanio Casimiro</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&display=swap');
+
+    :root {
+      --navy: #1a2240;
+      --blue: #2d5be3;
+      --sky: #dce9ff;
+      --white: #ffffff;
+      --grey: #f4f6fb;
+      --text: #1a2240;
+      --muted: #5a6178;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--grey);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: var(--navy);
+      color: var(--white);
+      padding: 60px 40px 50px;
+      text-align: center;
+    }
+    header .label {
+      display: inline-block;
+      background: var(--blue);
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+    header h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 400;
+      line-height: 1.15;
+      margin-bottom: 10px;
+    }
+    header h1 span { color: #7aadff; }
+    header p.sub {
+      color: #a8b8d8;
+      font-size: 0.95rem;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    /* ── ENGLISH SUMMARY ── */
+    .english-box {
+      background: var(--blue);
+      color: #fff;
+      max-width: 820px;
+      margin: 40px auto 0;
+      border-radius: 12px;
+      padding: 28px 36px;
+    }
+    .english-box .flag {
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      opacity: 0.7;
+      margin-bottom: 8px;
+    }
+    .english-box p { font-size: 0.92rem; opacity: 0.92; }
+
+    /* ── MAIN ── */
+    main {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 50px 24px 60px;
+      display: flex;
+      flex-direction: column;
+      gap: 36px;
+    }
+
+    /* ── CARD ── */
+    .card {
+      background: var(--white);
+      border-radius: 14px;
+      padding: 36px 40px;
+      box-shadow: 0 2px 16px rgba(26,34,64,0.07);
+    }
+
+    .card-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 10px;
+    }
+
+    .card h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin-bottom: 16px;
+      color: var(--navy);
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.93rem;
+      margin-bottom: 10px;
+    }
+
+    /* ── TÂCHES ── */
+    .task-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 6px;
+    }
+    .task-list li {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .task-list li .icon {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      background: var(--sky);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+    }
+    .task-list li .content { font-size: 0.92rem; color: var(--muted); }
+    .task-list li .content strong { color: var(--navy); font-weight: 600; display: block; }
+
+    /* ── DIFFICULTÉS ── */
+    .diff-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 8px;
+    }
+    @media (max-width: 560px) { .diff-grid { grid-template-columns: 1fr; } }
+
+    .diff-item {
+      background: var(--grey);
+      border-left: 3px solid var(--blue);
+      border-radius: 8px;
+      padding: 14px 16px;
+    }
+    .diff-item .title {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+    .diff-item p { font-size: 0.83rem; color: var(--muted); }
+
+    /* ── COMPETENCES ── */
+    .comp-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 8px;
+    }
+    .comp-item { display: flex; flex-direction: column; gap: 5px; }
+    .comp-item .comp-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--navy);
+    }
+    .comp-item .comp-desc { font-size: 0.82rem; color: var(--muted); }
+    .bar-bg {
+      height: 7px;
+      background: var(--sky);
+      border-radius: 99px;
+      overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%;
+      background: var(--blue);
+      border-radius: 99px;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.8rem;
+      color: #9aa4be;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="label">Portfolio d'apprentissage</div>
+  <h1>SAÉ 1.04 — <span>Se présenter sur Internet</span></h1>
+  <p class="sub">Réalisé par <strong style="color:#fff">Elfanio Casimiro</strong> · IUT Colmar, Département RT</p>
+
+  <div class="english-box">
+    <div class="flag">🇬🇧 English summary</div>
+    <p>
+      In this project, I created a personal CV website using HTML and CSS from scratch.
+      The goal was to present myself online in a structured and professional way.
+      I designed several web pages including a homepage, a skills section, and a contact page,
+      all linked together with a consistent stylesheet. This project helped me understand
+      the fundamentals of web development: semantic HTML, CSS styling, page layout, and navigation between pages.
+    </p>
+  </div>
+</header>
+
+<main>
+
+  <!-- 1. CONTEXTE -->
+  <div class="card">
+    <div class="card-label">01 · Contexte du projet</div>
+    <h2>Créer un site CV en HTML &amp; CSS</h2>
+    <p>
+      Dans le cadre de la SAÉ 1.04 <em>«&nbsp;Se présenter sur Internet&nbsp;»</em> à l'IUT de Colmar (département Réseaux et Télécommunications),
+      j'ai dû concevoir et réaliser un <strong>site web personnel</strong> faisant office de CV en ligne.
+    </p>
+    <p>
+      Le site devait comporter plusieurs pages HTML reliées par une même feuille de style CSS,
+      avec une navigation fonctionnelle, des ancres internes, et un rendu cohérent sur navigateur.
+      L'outil principal utilisé pour le développement et les tests était <strong>CodePen.io</strong>.
+    </p>
+  </div>
+
+  <!-- 2. TÂCHES RÉALISÉES -->
+  <div class="card">
+    <div class="card-label">02 · Tâches réalisées personnellement</div>
+    <h2>Ce que j'ai réalisé</h2>
+    <ul class="task-list">
+      <li>
+        <span class="icon">📄</span>
+        <div class="content">
+          <strong>Structure HTML des pages</strong>
+          J'ai écrit l'ensemble du code HTML : balises sémantiques (header, nav, main, section, footer), listes, tableaux, liens et ancres.
+        </div>
+      </li>
+      <li>
+        <span class="icon">🎨</span>
+        <div class="content">
+          <strong>Feuille de style CSS unique</strong>
+          J'ai créé un fichier CSS partagé entre toutes les pages, avec mise en forme des couleurs, polices, marges et arrière-plans.
+        </div>
+      </li>
+      <li>
+        <span class="icon">🔗</span>
+        <div class="content">
+          <strong>Navigation multi-pages</strong>
+          J'ai mis en place les liens entre les différentes pages HTML du site, ainsi que des ancres pour les sauts internes.
+        </div>
+      </li>
+      <li>
+        <span class="icon">📱</span>
+        <div class="content">
+          <strong>Mise en page responsive</strong>
+          J'ai adapté les éléments visuels pour que le rendu reste correct quelle que soit la largeur de la fenêtre.
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- 3. DIFFICULTÉS -->
+  <div class="card">
+    <div class="card-label">03 · Difficultés rencontrées</div>
+    <h2>Les obstacles que j'ai rencontrés</h2>
+    <div class="diff-grid">
+      <div class="diff-item">
+        <div class="title">Liens locaux sur CodePen</div>
+        <p>Je n'avais pas d'abonnement Pro sur CodePen, donc je ne pouvais pas tester les liens entre mes pages facilement. J'ai dû utiliser des URLs de pens séparés avec <code>target="blank"</code> pour contourner le problème.</p>
+      </div>
+      <div class="diff-item">
+        <div class="title">Cascade CSS &amp; conflits</div>
+        <p>Mes règles CSS se superposaient sans que je comprenne pourquoi. J'ai mis du temps à réaliser que certains sélecteurs s'annulaient entre eux, notamment pour les marges et les couleurs.</p>
+      </div>
+      <div class="diff-item">
+        <div class="title">Structuration sémantique</div>
+        <p>Je ne savais pas toujours quelle balise utiliser entre <code>article</code>, <code>section</code> ou <code>div</code>. J'ai dû relire la doc et faire plusieurs essais avant de trouver la bonne structure.</p>
+      </div>
+      <div class="diff-item">
+        <div class="title">Comportement scroll-behavior</div>
+        <p>J'avais ajouté <code>scroll-behavior: smooth</code> en CSS mais ça ne marchait pas sur tous les navigateurs. J'ai dû vérifier la compatibilité et adapter mon code en conséquence.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. COMPÉTENCES -->
+  <div class="card">
+    <div class="card-label">04 · Acquisition de compétences</div>
+    <h2>Progression &amp; preuves</h2>
+    <div class="comp-list">
+      <div class="comp-item">
+        <div class="comp-label">Rédiger du HTML sémantique</div>
+        <div class="comp-desc">Je sais structurer une page avec les balises appropriées et créer des liens internes/externes.</div>
+        <div class="bar-bg"><div class="bar-fill" style="width:80%"></div></div>
+      </div>
+      <div class="comp-item">
+        <div class="comp-label">Styliser avec CSS</div>
+        <div class="comp-desc">Je maîtrise les propriétés de mise en forme courantes : couleurs, polices, marges, bordures, flexbox basique.</div>
+        <div class="bar-bg"><div class="bar-fill" style="width:70%"></div></div>
+      </div>
+      <div class="comp-item">
+        <div class="comp-label">Organiser un projet multi-fichiers</div>
+        <div class="comp-desc">J'ai appris à lier plusieurs pages HTML à une seule feuille CSS et à gérer les chemins de fichiers.</div>
+        <div class="bar-bg"><div class="bar-fill" style="width:65%"></div></div>
+      </div>
+      <div class="comp-item">
+        <div class="comp-label">Déboguer et tester</div>
+        <div class="comp-desc">J'ai utilisé l'inspecteur du navigateur pour identifier et corriger des erreurs de rendu CSS.</div>
+        <div class="bar-bg"><div class="bar-fill" style="width:60%"></div></div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer>Elfanio Casimiro · IUT Colmar · SAÉ 1.04 · 2025–2026</footer>
+
+</body>
+</html>
